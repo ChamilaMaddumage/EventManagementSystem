@@ -1,4 +1,7 @@
 # EventManagementSystem
+Development tools
+ -Visual Studio 2017
+ -MS SQL Server 2017
 
 1. First download the project and open it.
 2. There is a database backup named as EMS.bak. This database has a default admin user which has been created.
