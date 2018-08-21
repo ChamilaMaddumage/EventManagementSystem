@@ -90,10 +90,11 @@ namespace EMS_BusinessLayer
                 throw ex;
             }
         }
-        public void GetTeamDetails()
+        public List<TeamDetails> GetTeamDetails()
         {
             DAL_Team team = new DAL_Team();
-            team.GetTeamDetails();
+            List<TeamDetails>  teamDetails = team.GetTeamDetails();
+            return teamDetails;
  
         }//View Team Details
         public SaveResponses SaveTeamMembers(TeamDetails teamDetails)

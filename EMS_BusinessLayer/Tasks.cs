@@ -54,10 +54,12 @@ namespace EMS_BusinessLayer
             }
 
         }
-        public void GetTaskDetails(String userName)
+        public List<TaskDetails> GetTaskDetails(String userName)
         {
             DAL_Task task = new DAL_Task();
-            task.GetTaskDetails(userName);
+            List<TaskDetails>  taskDetails = task.GetTaskDetails(userName);
+            return taskDetails;
+
         
         }//View Team Details
         public bool TaskAvailable(string userName, string taskName)

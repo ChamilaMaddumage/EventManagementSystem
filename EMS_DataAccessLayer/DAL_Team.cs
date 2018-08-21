@@ -120,7 +120,7 @@ namespace EMS_DataAccessLayer
                 throw ex;
             }
         }
-        public void GetTeamDetails()
+        public List<TeamDetails> GetTeamDetails()
         {
             List<TeamDetails> teamDetails = new List<TeamDetails>();
             try
@@ -141,15 +141,16 @@ namespace EMS_DataAccessLayer
                                 Team_Lead = rdr.GetString(rdr.GetOrdinal("Team_Lead")),
                             });
                         }
-                        Console.ForegroundColor = ConsoleColor.DarkYellow;
-                        Console.Write("Team Name   ");
-                        Console.WriteLine("Team Lead");
-                        Console.ResetColor();
-                        foreach (TeamDetails i in teamDetails)
-                        {
-                            Console.Write(i.Team_Name.Trim() +"       ");
-                            Console.WriteLine(i.Team_Lead);
-                        }
+                        return teamDetails;
+                        //Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        //Console.Write("Team Name   ");
+                        //Console.WriteLine("Team Lead");
+                        //Console.ResetColor();
+                        //foreach (TeamDetails i in teamDetails)
+                        //{
+                        //    Console.Write(i.Team_Name.Trim() +"       ");
+                        //    Console.WriteLine(i.Team_Lead);
+                        //}
                     }
                 }
             }

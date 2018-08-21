@@ -74,7 +74,7 @@ namespace EMS_DataAccessLayer
 
 
         }
-        public void GetTaskDetails(String userName)
+        public List<TaskDetails> GetTaskDetails(String userName)
         {
             List<TaskDetails> taskDetails = new List<TaskDetails>();
             try
@@ -97,19 +97,20 @@ namespace EMS_DataAccessLayer
                                 Status = rdr.GetString(rdr.GetOrdinal("Status")),
                             });
                         }
-                        Console.ForegroundColor = ConsoleColor.DarkYellow;
-                        Console.Write("Task Name   ");
-                        Console.Write("Started Date           ");
-                        Console.Write("End Date               ");
-                        Console.WriteLine("Status");
-                        Console.ResetColor();
-                        foreach (TaskDetails i in taskDetails)
-                        {
-                            Console.Write(i.Task_Name.Trim() + "          ");
-                            Console.Write(i.Started_Date + "   ");
-                            Console.Write(i.End_Date + "   ");
-                            Console.WriteLine(i.Status.Trim() + "  ");
-                        }
+                        return taskDetails;
+                        //Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        //Console.Write("Task Name   ");
+                        //Console.Write("Started Date           ");
+                        //Console.Write("End Date               ");
+                        //Console.WriteLine("Status");
+                        //Console.ResetColor();
+                        //foreach (TaskDetails i in taskDetails)
+                        //{
+                        //    Console.Write(i.Task_Name.Trim() + "          ");
+                        //    Console.Write(i.Started_Date + "   ");
+                        //    Console.Write(i.End_Date + "   ");
+                        //    Console.WriteLine(i.Status.Trim() + "  ");
+                        //}
                     }
                 }
             }

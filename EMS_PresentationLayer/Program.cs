@@ -262,7 +262,16 @@ namespace EMS_PresentationLayer
                     else if (String.Equals(functionType, "vtd", StringComparison.OrdinalIgnoreCase))
                     {
                         Team team = new Team();
-                        team.GetTeamDetails();
+                        List<TeamDetails>  teamDetails = team.GetTeamDetails();
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        Console.Write("Team Name   ");
+                        Console.WriteLine("Team Lead");
+                        Console.ResetColor();
+                        foreach (TeamDetails i in teamDetails)
+                        {
+                            Console.Write(i.Team_Name.Trim() + "       ");
+                            Console.WriteLine(i.Team_Lead);
+                        }
                         goto startMainMenu;
 
                     }
@@ -452,7 +461,17 @@ namespace EMS_PresentationLayer
                     else if (String.Equals(functionTypeLead, "vtd", StringComparison.OrdinalIgnoreCase))
                     {
                         Team team = new Team();
-                        team.GetTeamDetails();
+                        List<TeamDetails> teamDetails = team.GetTeamDetails();
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        Console.Write("Team Name   ");
+                        Console.WriteLine("Team Lead");
+                        Console.ResetColor();
+                        foreach (TeamDetails i in teamDetails)
+                        {
+                            Console.Write(i.Team_Name.Trim() + "       ");
+                            Console.WriteLine(i.Team_Lead);
+                        }
+
                         goto startMainMenuLead;
                     }
                     else if (String.Equals(functionTypeLead, "lo", StringComparison.OrdinalIgnoreCase))
@@ -477,7 +496,20 @@ namespace EMS_PresentationLayer
                     if (String.Equals(functionTypeNormal, "vt", StringComparison.OrdinalIgnoreCase))
                     {
                         Tasks task = new Tasks();
-                        task.GetTaskDetails(userName);
+                        List<TaskDetails> taskDetails = task.GetTaskDetails(userName);
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        Console.Write("Task Name   ");
+                        Console.Write("Started Date           ");
+                        Console.Write("End Date               ");
+                        Console.WriteLine("Status");
+                        Console.ResetColor();
+                        foreach (TaskDetails i in taskDetails)
+                        {
+                            Console.Write(i.Task_Name.Trim() + "          ");
+                            Console.Write(i.Started_Date + "   ");
+                            Console.Write(i.End_Date + "   ");
+                            Console.WriteLine(i.Status.Trim() + "  ");
+                        }
                         Console.WriteLine();
                         goto normalMenuStart;
                     }
