@@ -99,16 +99,16 @@ namespace EMS_DataAccessLayer
                         }
                         Console.ForegroundColor = ConsoleColor.DarkYellow;
                         Console.Write("Task Name   ");
-                        Console.Write("Started Date         ");
+                        Console.Write("Started Date           ");
                         Console.Write("End Date               ");
                         Console.WriteLine("Status");
                         Console.ResetColor();
                         foreach (TaskDetails i in taskDetails)
                         {
-                            Console.Write(i.Task_Name + "  ");
-                            Console.Write(i.Started_Date + "  ");
-                            Console.Write(i.End_Date + "  ");
-                            Console.WriteLine(i.Status + "  ");
+                            Console.Write(i.Task_Name.Trim() + "          ");
+                            Console.Write(i.Started_Date + "   ");
+                            Console.Write(i.End_Date + "   ");
+                            Console.WriteLine(i.Status.Trim() + "  ");
                         }
                     }
                 }
