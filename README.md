@@ -1,6 +1,8 @@
 # EventManagementSystem
 Development tools
+
  -Visual Studio 2017
+ 
  -MS SQL Server 2017
 
 1. First download the project and open it.
